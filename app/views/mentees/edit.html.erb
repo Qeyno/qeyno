@@ -15,6 +15,12 @@
       <%= f.label :description, "Description of Purpose" %>
       <%= f.text_field :description %>
 
+      <%= f.label :interest, "Interest" %>
+      <%= f.text_field :interest %>
+
+      <%= f.label :goal, "Goal" %>
+      <%= f.text_field :goal %>
+
       <%= f.label :school, "School" %>
       <%= f.text_field :school %>
 
@@ -26,6 +32,9 @@
 
       <%= f.label :college_3, "Third Dream College" %>
       <%= f.text_field :college_3 %>
+
+      <%= f.label :xptag_time, "Amount of Hours Spent Per Week" %>
+      <%= f.select :xptag_time, @XPTAG_TIME %>
 
       <%= f.label :password %>
       <%= f.password_field :password %>

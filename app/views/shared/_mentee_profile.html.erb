@@ -9,5 +9,5 @@
   <li> Share your goal for mentors: <%= @user.goal %> </li>
   <li> Interests: <%= @user.interest %> </li>
   <li> Email: <%= @user.email %> </li>
-  <li> Amount of hours spent per week: <%= @user.xptag_time %> </li>
+  <li> Amount of hours spent per week: <%= @XPTAG_TIME_MAP[@user.xptag_time] %> </li>
 </ul>

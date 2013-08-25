@@ -15,11 +15,23 @@
       <%= f.label :description, "Professional Description" %>
       <%= f.text_field :description %>
 
+      <%= f.label :interest, "Interest" %>
+      <%= f.text_field :interest %>
+
+      <%= f.label :goal, "Goal" %>
+      <%= f.text_field :goal %>
+
       <%= f.label :college, "Graduated from" %>
       <%= f.text_field :college %>
 
       <%= f.label :affiliation, "Affiliation" %>
       <%= f.text_field :affiliation %>
+
+      <%= f.label :xptag, "Experience Tag" %>
+      <%= f.select :xptag, @XPTAG %>
+
+      <%= f.label :xptag_time, "Amount of Hours Spent Per Week" %>
+      <%= f.select :xptag_time, @XPTAG_TIME %>
 
       <%= f.label :password %>
       <%= f.password_field :password %>
