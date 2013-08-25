@@ -61,6 +61,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
+  after_validation { self.errors.messages.delete(:password_digest) }
 
   def feed
     Micropost.from_users_followed_by(self)
@@ -86,10 +87,3 @@ class User < ActiveRecord::Base
 end
 
 
-class Mentor < User
-  attr_accessible :affiliation, :xptag, :college
-end
-
-class Mentee < User
-  attr_accessible :college_1, :college_2, :college_3, :school
-end

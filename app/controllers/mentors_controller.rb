@@ -1,4 +1,3 @@
 class MentorsController < UsersController
 
-
 end

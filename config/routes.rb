@@ -10,12 +10,11 @@ Tryloop::Application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :mentors
   resources :mentees
+  resources :admins
 
   get "static_pages/home"
 
   get "static_pages/help"
-
-  get "users/new"
 
   root                to: 'static_pages#home'
   match '/help',      to: 'static_pages#help'
@@ -27,7 +26,7 @@ Tryloop::Application.routes.draw do
   match '/contact',   to: 'static_pages#contact'
   match '/signup',    to: 'users#new'
   match '/signin',    to: 'sessions#new' 
-  match '/signout',   to: 'sessions#destroy'
+  match '/signout',   to: 'sessions#destroy', via: :delete
 
 
   # The priority is based upon order of creation:
