@@ -1,0 +1,8 @@
+<li>
+  <%= gravatar_for mentor, size: 52 %>
+  <%= link_to mentor.name, mentor %>
+  <% if current_user.admin? && !current_user?(mentor) %>
+    | <%= link_to "delete", mentor, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>

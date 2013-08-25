@@ -1,0 +1,3 @@
+class MenteesController < UsersController
+
+end

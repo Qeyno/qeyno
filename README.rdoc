@@ -1,4 +1,4 @@
-== TripTagg
-Capturing student experiences in a fun, scalable and engaging way
+== Qeyno
+It is where Khan Academy meets LinkedIN for Students (13-17) - Gamified Career Discovery for Kids.
 
-Visit http://triptagg.heroku.com
+Visit http://launch.qeyno.com/

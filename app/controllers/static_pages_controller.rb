@@ -6,14 +6,14 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def explore
+  def search
   	 if signed_in?
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
   end
 
-  def reflect
+  def share
   	 if signed_in?
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
@@ -21,5 +21,8 @@ class StaticPagesController < ApplicationController
   end
 
   def help
+  end
+
+  def play
   end
 end

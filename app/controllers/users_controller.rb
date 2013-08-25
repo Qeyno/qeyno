@@ -35,8 +35,8 @@ class UsersController < ApplicationController
 		@user = User.new(params[:user])
 		if @user.save
 			sign_in @user
-			flash[:success] = "Welcome to the TripTagg!"
-			redirect_to @user
+			flash[:success] = "Welcome to Qeyno!"
+			redirect_to network_path
 		else
 			render 'new'
 		end

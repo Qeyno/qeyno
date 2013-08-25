@@ -12,6 +12,12 @@
       <%= f.label :email %>
       <%= f.text_field :email %>
 
+      <%= f.radio_button :type, "Mentor" %>
+      <%= f.label(:mentor, "I am a mentor.") %>
+      
+      <%= f.radio_button :type, "Mentee" %>
+      <%= f.label(:mentee, "I am a mentee.") %>
+
       <%= f.label :password %>
       <%= f.password_field :password %>
 

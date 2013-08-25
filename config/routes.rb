@@ -8,6 +8,8 @@ Tryloop::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :mentors
+  resources :mentees
 
   get "static_pages/home"
 
@@ -17,9 +19,10 @@ Tryloop::Application.routes.draw do
 
   root                to: 'static_pages#home'
   match '/help',      to: 'static_pages#help'
-  match '/prepare',   to: 'static_pages#prepare'
-  match '/explore',   to: 'static_pages#explore'
-  match '/reflect',   to: 'static_pages#reflect'
+  match '/network',   to: 'static_pages#network'
+  match '/search',    to: 'static_pages#search'
+  match '/share',     to: 'static_pages#share'
+  match '/play',      to: 'static_pages#play'
   match '/about',     to: 'static_pages#about'
   match '/contact',   to: 'static_pages#contact'
   match '/signup',    to: 'users#new'

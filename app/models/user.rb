@@ -10,7 +10,23 @@
 #  password_digest :string(255)
 #  remember_token  :string(255)
 #  admin           :boolean          default(FALSE)
+#  type            :string(255)
+#  title           :string(255)
+#  description     :string(255)
+#  zip             :string(255)
+#  college         :string(255)
+#  college_1       :string(255)
+#  college_2       :string(255)
+#  college_3       :string(255)
+#  goal            :string(255)
+#  interest        :string(255)
+#  photo_id        :integer
+#  xptag           :integer
+#  xptag_time      :integer
+#  affiliation     :string(255)
+#  school          :string(255)
 #
+
 
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
@@ -23,7 +39,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   # attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :type
+  attr_accessible :description, :interest, :xptag_time, :goal, :photo_id, :title, :zip
+
   has_secure_password
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
@@ -65,4 +83,13 @@ class User < ActiveRecord::Base
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
+end
+
+
+class Mentor < User
+  attr_accessible :affiliation, :xptag, :college
+end
+
+class Mentee < User
+  attr_accessible :college_1, :college_2, :college_3, :school
 end
