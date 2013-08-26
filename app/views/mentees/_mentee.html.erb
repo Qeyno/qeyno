@@ -1,4 +1,5 @@
 <li>
+  Mentee
   <%= gravatar_for mentee, size: 52 %>
   <%= link_to mentee.name, mentee %>
   <% if current_user.admin? && !current_user?(mentee) %>

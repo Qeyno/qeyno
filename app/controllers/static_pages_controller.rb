@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-   def home
+  def home
     if signed_in?
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
@@ -8,8 +8,12 @@ class StaticPagesController < ApplicationController
 
   def search
   	 if signed_in?
-      @micropost  = current_user.microposts.build
-      @feed_items = current_user.feed.paginate(page: params[:page])
+       @users = User.search(params[:search])
+       if @users.size.zero?
+        flash[:notice] = "No result found."
+       end
+       @micropost  = current_user.microposts.build
+       @feed_items = current_user.feed.paginate(page: params[:page])
     end
   end
 

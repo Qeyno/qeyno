@@ -1,4 +1,5 @@
 <li>
+  Mentor
   <%= gravatar_for mentor, size: 52 %>
   <%= link_to mentor.name, mentor %>
   <% if current_user.admin? && !current_user?(mentor) %>

@@ -1,3 +1,14 @@
 <% provide(:title, 'search') %>
 <h1>Search</h1>
 
+<%= form_tag search_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil, class: "btn btn-large btn-primary" %>
+  </p>
+<% end %>
+
+
+<ul class="users">
+  <%= render @users %>
+</ul>
