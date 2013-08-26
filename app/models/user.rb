@@ -85,9 +85,9 @@ class User < ActiveRecord::Base
       if not Rails.env.development?
         query = 'name ILIKE ? OR interest ILIKE ?'
       end
-      find(:all, :conditions => [query, "%#{search}%", "%#{search}%"])
+      where(query, "%#{search}%", "%#{search}%")
     else
-      find(:all)
+      scoped
     end
   end
   

@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
 
   def search
   	 if signed_in?
-       @users = User.search(params[:search])
+       @users = User.search(params[:search]).paginate(page: params[:page]).per_page(25)
        if @users.size.zero?
         flash[:notice] = "No result found."
        end
