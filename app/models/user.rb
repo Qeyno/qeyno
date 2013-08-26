@@ -81,7 +81,11 @@ class User < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => ['name LIKE ? OR interest LIKE ?', "%#{search}%", "%#{search}%"])
+      query = 'name LIKE ? OR interest LIKE ?'
+      if not Rails.env.development?
+        query = 'name ILIKE ? OR interest ILIKE ?'
+      end
+      find(:all, :conditions => [query, "%#{search}%", "%#{search}%"])
     else
       find(:all)
     end

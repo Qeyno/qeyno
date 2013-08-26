@@ -6,4 +6,10 @@
     | <%= link_to "delete", mentee, method: :delete,
                                   data: { confirm: "You sure?" } %>
   <% end %>
+  <div>
+   <% if mentee.goal %> Goal: <%= mentee.goal %> <% end %>
+  </div>
+   <div>
+   <% if mentee.interest %> Interest: <%= mentee.interest %> <% end %>
+  </div>
 </li>
