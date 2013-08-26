@@ -1,17 +1,32 @@
-<% provide(:title, 'Network') %>
-<h1>Upcoming Events:</h1>
-<ul>
-	<li>Mentor training: <b>#mentortraining</b></li>
-	<ul>
-		<li> When: <b>September 14-16, 2013.</b>
-		</li>
-		<li>
-			Where:
-			<b>
-				SF Bay Area - Code for America<br>
-				155 9th St <br>
-				San Francisco, CA 94103
-		    </b>
-		</li>
-	</ul>
-</ul>
+<% if signed_in? %>
+  <% provide(:title, 'Network') %>
+  <h1>Upcoming Events:</h1>
+  <ul>
+    <li>Mentor training: <b>#mentortraining</b></li>
+    <ul>
+      <li> When: <b>September 14-16, 2013.</b>
+      </li>
+      <li>
+        Where:
+        <b>
+          SF Bay Area - Code for America<br>
+          155 9th St <br>
+          San Francisco, CA 94103
+          </b>
+      </li>
+    </ul>
+  </ul>
+<% else %>
+
+<div class="center hero-unit">
+  <h1>Welcome to Qeyno</h1>
+
+  <h2>
+    <%= link_to image_tag("qeyno.jpg", alt: "Rails"), 'http://launch.qeyno.com/' %>
+    <br>
+    Qeyno is where Khan Academy meets LinkedIN for Students (13-17) - Gamified Career Discovery for Kids.
+  </h2>
+
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+</div>
+<% end %>

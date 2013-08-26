@@ -5,7 +5,7 @@
       <nav>
         <ul class="nav pull-right">
           <% if signed_in? %>
-          <li class="<%= 'active' if current_page?(network_path) %>"><%= link_to "Network", network_path %></li>
+          <li class="<%= 'active' if current_page?(network_path) or current_page?(root_path) %>"><%= link_to "Network", network_path %></li>
           <% if current_user.type == "Mentor" %>
             <li class="<%= 'active' if current_page?(search_path) %>"><%= link_to "Mentee Search", search_path %></li>
             <li class="<%= 'active' if current_page?(share_path) %>"><%= link_to "Share", share_path %></li>
